@@ -1,0 +1,247 @@
+.form-wrapper {
+    background: $white;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    &.auth-form {
+        .logo {
+            width: 200px;
+            height: auto;
+            margin: 0rem 1rem;
+        }
+
+        box-shadow: $shadow;
+        height: 100vh;
+        width: 40vw;
+
+        @media all and (max-width: 812px) {
+            width: 100vw;
+        }
+
+        /* iphones */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-device-pixel-ratio: 3) {
+            width: 100vw;
+        }
+    }
+
+    .form-link-wrapper {
+        text-align: center;
+
+        .form-link {
+            color: $second;
+            text-align: center;
+            font-size: 0.8rem;
+            text-decoration: none;
+            width: 5rem;
+            margin-left: auto;
+            margin-right: auto;
+
+            &:hover {
+                color: $main;
+            }
+        }
+    }
+}
+
+form {
+    font-size: 0.8rem;
+
+    textarea {
+        display: block;
+        width: 100%;
+        border-radius: $border-radius;
+        background: $white;
+        color: $second;
+    }
+
+    .form-group {
+        margin: 1rem;
+
+        label {
+            margin: 0rem 0rem;
+            color: $second;
+
+            &.switch {
+                position: relative;
+                display: inline-block;
+                width: 2rem;
+                height: 1.2rem;
+                margin: 0rem;
+
+
+
+                /* Hide default HTML checkbox */
+                input {
+                    opacity: 0;
+                    width: 0;
+                    height: 0;
+                }
+
+                /* The slider */
+                .slider {
+                    position: absolute;
+                    cursor: pointer;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: $satin;
+                    -webkit-transition: .4s;
+                    transition: .4s;
+                }
+
+                .slider:before {
+                    position: absolute;
+                    content: "";
+                    height: 15px;
+                    width: 10px;
+                    left: 4px;
+                    bottom: 2px;
+                    background-color: $white;
+                    -webkit-transition: .4s;
+                    transition: .4s;
+                }
+
+                input:checked+.slider {
+                    background-color: $main;
+                }
+
+                input:focus+.slider {
+                    box-shadow: 0 0 1px $main;
+                }
+
+                input:checked+.slider:before {
+                    -webkit-transform: translateX(1rem);
+                    -ms-transform: translateX(1rem);
+                    transform: translateX(1rem);
+                }
+
+                /* Rounded sliders */
+                .slider.round {
+                    border-radius: 34px;
+                }
+
+                .slider.round:before {
+                    border-radius: 50%;
+                }
+
+            }
+        }
+
+        input {
+            margin: 0.5rem 0rem;
+        }
+    }
+}
+
+.dropdownForm {
+    position: fixed;
+    display: none;
+    transition: all 1s ease-in-out;
+    padding: 1rem 0rem;
+    z-index: 1;
+    background: $white;
+    border-radius: $border-radius;
+    box-shadow: $shadow;
+
+    &.active {
+        display: initial;
+    }
+
+    .form-group {
+        margin: 0.5rem 1rem;
+
+        input {
+            padding: 0.5rem;
+            margin: 1px;
+
+            &[type="input"],
+            &[type="textarea"] {
+                display: block;
+            }
+        }
+
+    }
+
+}
+
+select {
+    display: block;
+    width: 100%;
+    height: 2rem;
+    background: $white;
+    border-radius: $border-radius;
+    color: $second;
+}
+
+input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #fff;
+    border-radius: $border-radius;
+    box-shadow: $shadow;
+
+    &:focus,
+    &:hover {
+        outline: none;
+        border: 2px solid $main;
+        transition: $transition;
+    }
+
+    transition: $transition;
+
+    &[type="submit"] {
+        background: $main;
+        color: $white;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+            color: $main;
+            background-color: $white;
+        }
+    }
+}
+
+.sepa-debit-wrapper,
+.credit-card-wrapper {
+    padding: 2rem;
+    border-radius: $border-radius;
+    background: $main;
+    max-width: 300px;
+    width: 300px;
+
+    .credit-card {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .form-row,
+    .col {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    input {
+        padding: 0.5rem;
+    }
+
+    .StripeElement {
+        background: white;
+        width: 100%;
+        padding: 0.5rem;
+        border-radius: 5px;
+        margin: 0.5rem;
+    }
+
+    #mandate-acceptance {
+        width: 300px;
+        overflow: hidden;
+        padding: 1rem;
+    }
+}

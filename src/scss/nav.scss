@@ -1,0 +1,59 @@
+@import './var.scss';
+.application-wrapper {
+    margin-top: calc( #{$header_height} - 20px + 2px);
+}
+
+.content {
+    background: $white;
+    float: left;
+    min-height: calc(100vh - (#{$header_height} + 2px));
+    height: calc(100vh - (#{$header_height} + 2px) );
+    width: $content-width;
+    margin-left: calc(#{$left-nav-width} + 2px );
+    padding: 2rem;
+}
+
+.vertical-nav {
+    min-height: calc(100vh - #{$header_height});
+    height: calc(100vh - #{$header_height});
+    position: fixed;
+    overflow-y: scroll;
+    float: left;
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: $left-nav-width;
+    background: $satin;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    a {
+        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 70px;
+        height: 70px;
+        padding: 0.5rem;
+        font-size: 0.5rem;
+        box-shadow: $shadow;
+       
+        background: $white;
+        text-decoration: none;
+        color: $second;
+        svg {
+            margin-bottom: 2px;
+            font-size: 1.5rem;
+        }
+        &:focus {
+            color: $main;
+            border-left: 5px solid $main;
+        }
+        &:hover {
+            background: $main;
+            color: $white;
+        }
+    }
+}

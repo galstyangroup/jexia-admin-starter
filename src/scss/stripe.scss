@@ -1,0 +1,165 @@
+@import './var';
+
+.stripe-container {
+  position: fixed;
+  right: 0px;
+  width: 100vw;
+  background: $main;
+  z-index: 999;
+  top: $header-height;
+  display: flex;
+  height: calc(100vh - #{$header-height});
+  box-shadow: $shadow;
+  padding: 2rem 2rem;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 2s ease-in;
+
+  .sr-title {
+    margin: 1rem 0rem;
+    p,
+    h2 {
+      color: $white;
+    }
+  }
+
+  .sr-instructions {
+    margin: 1rem 0rem;
+    background: $satin;
+    box-shadow: $shadow;
+  }
+
+  .sr-banner {
+    background: $white;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+    padding: 1rem;
+    font-size: 1rem;
+    p {
+      color: $second;
+    }
+    
+  }
+
+  .sr-body {
+    background: $white;
+    color:$second;
+    min-height: 60vh;
+    box-shadow: $shadow;
+    display: flex;
+    justify-content: center;
+    .sr-main {
+      width: 50%;
+      display: flex;
+      padding: 1rem;
+      flex-direction: column;
+      justify-content: center;
+
+      h3 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      [class^="sr"] {
+        margin: 0.2rem 0rem;
+      }
+
+      .sr-summary {
+        text-align: left;
+
+        .summary-table {
+          display: flex;
+          flex-wrap: wrap;
+          font-size: 0.8rem;
+          border-radius: $border-radius;
+          padding:2px;
+          box-shadow:$shadow;
+          justify-content: space-between;
+          justify-self: flex-start;
+          .summary-total {
+            color:$main;
+            border-top:2px solid $main;
+          }
+
+          .summary-subtotal {
+            color:$second;
+            border-top: 1px dashed $accent;
+          }
+
+          .summary-discount {
+            background: $white;
+            color:$red;
+          }
+
+          div {
+            
+            padding: 0.3rem;
+            width: 50%;
+            &:nth-child(even){
+              text-align: right;
+            }
+          }
+        }
+      }
+
+    }
+
+    .sr-animals {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 50%;
+      margin: 1rem 1rem;
+
+      .sr-animal {
+        width: 100%;
+        padding: 1rem;
+        margin: 0.5rem;
+        box-shadow: $shadow;
+        border-radius: $border-radius;
+        text-align: center;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.sr-legal-text {
+  font-size: 0.7rem;
+}
+
+/* Stripe Element placeholder */
+.sr-card-element {
+  background: #ffffff;
+  color: $second;
+  box-shadow: $shadow;
+  border-radius: $border-radius;
+  padding: 0.8rem;
+}
+
+.sr-animal-text {
+  color: $second;
+  font-size: 0.8rem;
+  cursor: none;
+}
+
+.sr-animal-emoji {
+  font-size: 3rem;
+  margin: 0px;
+  opacity: .5;
+}
+
+.sr-animal-emoji.selected {
+  opacity: 1;
+}
+
+#submit {
+  width: 100%;
+}
+
+.completed-view {
+  background: $main;
+  padding: 1rem;
+  border-radius: $border-radius;
+  text-align: center;
+}

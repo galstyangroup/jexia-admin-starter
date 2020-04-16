@@ -1,0 +1,21 @@
+:root {
+    --vh: 100vh;
+    --vw: 100vw;
+}
+
+$border-radius: 5px;
+$border-radius-extra: 50px;
+$main: #f9b200;
+
+$second: #dadada;
+$accent: purple;
+$satin: #464648;
+$white: #1d1d1d;
+$red: rgb(192, 5, 5); 
+$shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
+$transition: all 0.3s;
+$header_height: 50px;
+$header_color: #ffffff;
+$header_text_color: $satin;
+$left-nav-width: 70px; 
+$content-width: calc(100vw - 72px); 

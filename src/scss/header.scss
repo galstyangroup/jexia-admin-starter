@@ -1,0 +1,60 @@
+@import './var.scss';
+header {
+    position: fixed;
+    top: 0;
+    background: $header_color;
+    box-shadow: $shadow;
+    nav {
+        height: $header_height;
+        max-height: $header_height;
+        display: flex;
+        width: 100vw;
+        color:$header_text_color;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0rem 1rem;
+        a.danger {
+            background: $red;
+            color:$white;
+            padding: 1rem;
+        }
+        .user-menu {
+            color: $header_text_color;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            p {
+                color:$header_text_color;
+            }
+            .user-icon {
+                margin: 0rem 1rem;
+                background: $main;
+                border-radius: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 30px;
+                font-size: 0.7rem;
+                min-width: 30px;
+                color: $header_text_color;
+                &:hover {
+                    cursor: pointer;
+                    background: $second;
+                    transition: $transition;
+                }
+            }
+        }
+        .user-menu-dropdown {
+            height: $header_height;
+            display: flex;
+            .dropdown-content {
+                top: #{$header_height};
+                right: -1rem;
+            }
+        }
+        .logo {
+            width: 100px;
+            height: auto;
+        }
+    }
+}

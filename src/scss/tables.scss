@@ -1,0 +1,39 @@
+@import './var.scss';
+.table-wrapper {
+    .title {
+        margin: 1rem 0rem;
+    }
+}
+
+.subtable-wrapper {
+    padding: 1rem;
+    display: none;
+    &.active {
+        display: block;
+    }
+}
+
+table {
+    box-shadow: $shadow;
+    background: $white;
+    width: 100%;
+    border-radius: $border-radius;
+    transition: all 0.3s;
+    tr {
+        &:hover {
+            background: $satin;
+            color: $second;
+            transition: all 0.3s;
+        }
+        th {
+            font-weight: 100;
+            background-color: $satin;
+            color: #444;
+            text-align: center;
+            padding: 1rem;
+        }
+        td {
+            padding: 1rem;
+        }
+    }
+}

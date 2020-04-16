@@ -1,0 +1,29 @@
+@import './var.scss';
+button {
+    box-shadow: $shadow;
+    border-radius: $border-radius-extra;
+    border: none;
+    cursor: pointer;
+    margin: 0.5rem 0rem;
+    color:$second;
+    background-color: $white;
+    padding: 0.5rem 1rem;
+    &.danger {
+        background: $red;
+        color:$white;
+    }
+    &.default {
+        background-color: $main;
+        color:$white;
+        &:hover {
+            background-color: $white;
+            color:$main;
+        }
+    }
+    &:hover {
+        background: $main;
+        color: $white;
+    }
+    transition: $transition;
+}
+

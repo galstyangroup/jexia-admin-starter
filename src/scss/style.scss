@@ -1,0 +1,76 @@
+@import './var.scss';
+// basic reset
+@import './reset.scss';
+
+body {
+    font-family: Verdana, Geneva, sans-serif;
+    background: $main;
+}
+
+h2, h1, h3 {
+    color: $main;
+}
+
+p {
+ color: $second;
+}
+
+.search {
+    max-width: 10rem;
+    margin: 1rem 0rem;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+@import './header';
+@import './nav';
+@import './buttons';
+@import './tables';
+@import './tabulator';
+@import './forms';
+@import './dropdown';
+@import './stripe';
+
+/* The container must be positioned relative: */
+
+.bg-image {
+    position: fixed;
+    top: 0;
+    right: 0;
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: middle;
+    z-index: -1;
+}
+
+.error {
+    position: fixed;
+    width: 250px;
+    background: $red;
+    right: 5%;
+    border-radius: $border-radius;
+    color: #fff;
+    bottom: 20px;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+    transition: all 1s;
+    box-shadow: $shadow;
+}
+
+.pagination {
+    display: block;
+    margin-top: 1rem;
+    input {
+        max-width: 60px;
+        text-align: center;
+    }
+}
