@@ -62,6 +62,8 @@ app.post('/api/signup', async (req, res, next) => {
 });
 
 app.post('/api/login', async (req, res, next) => {
+    const ums = new jexia.UMSModule();
+    jexia.jexiaClient().init(credentials, ums);
     const user = ums.signIn({
         email: req.body.email,
         password: req.body.password
