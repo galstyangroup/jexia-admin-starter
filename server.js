@@ -19,6 +19,14 @@ const credentials = {
     secret: process.env.JEXIA_SECRET,
 };
 
+
+const credentials_ums = {
+    projectID: process.env.JEXIA_PROJECT_ID,
+};
+
+
+
+
 const app = express();
 
 app.use(compression()); //Compress all routes
@@ -40,13 +48,15 @@ app.use(require('body-parser').urlencoded({
     extended: true
 }));
 
+const ums = new jexia.UMSModule();
+const ds = jexia.dataOperations();
+
+jexia.jexiaClient().init(credentials_ums, ums);
+
 
 // Application routes
 app.post('/api/signup', async (req, res, next) => {
-    const ums = new jexia.UMSModule();
-    jexia.jexiaClient().init(credentials, ums);
-
-    const user = await ums.signUp({
+    ums.signUp({
         email: req.body.email,
         password: req.body.password,
         first_name: req.body.first_name,
@@ -55,29 +65,46 @@ app.post('/api/signup', async (req, res, next) => {
         lang: req.body.lang,
         curr_org: null,
         browser: req.body.browser
+    }).then((x) => {
+        console.log(user)
+        res.send(user).redirect('/')
     }).catch(err => {
         res.status(400).json(err.message)
     });
-    res.json(user)
+    
 });
 
 app.post('/api/login', async (req, res, next) => {
-    const ums = new jexia.UMSModule();
-    jexia.jexiaClient().init(credentials, ums);
-    const user = ums.signIn({
+    ums.signIn({
         email: req.body.email,
         password: req.body.password
-    });
-    res.json(user)
+    }).then((x)=> {
+        console.log(x)
+        res.redirect('/')
+    }).catch(err => {
+        res.json(err)
+        }
+    );
 });
 
 app.get('/api/current_user', async (req, res) => {
-    const ums = new jexia.UMSModule();
-    jexia.jexiaClient().init(credentials, ums);
-    const user = await ums.getUser();
-    res.json(user);
+    const user = await ums.getUser().catch(err => {
+        res.redirect(401, '/#/login')
+    });
+
+    // jexia.jexiaClient().init(credentials, ds);
+    ums
+    .select()
+    .where(field => field("id").isEqualTo(user.id))  
+    .subscribe((x) => {
+        res.json(x[0]);
+    })
 });
 
+app.get('/api/logout', async (req, res ) => {
+    ums.resetDefault()
+    res.redirect( '/')
+});
 
 //distribute files form frontend
 const DIST_DIR = __dirname + '/dist';

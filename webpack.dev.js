@@ -16,6 +16,7 @@ module.exports = {
         writeToDisk: true,
         historyApiFallback: true,
         inline: true,
+        port: 7050,
         hot:true
     },
     plugins: [

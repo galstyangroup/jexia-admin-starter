@@ -1,4 +1,4 @@
-import Logo from '../../assets/images/logo.png';
+import Logo from '../../assets/images/logo.svg';
 import trx from '../../translations';
 import dropdown from '../../lib/dropdown';
 
@@ -20,9 +20,9 @@ export default function(x) {
                     { 
                         id:"logout",
                         button: `<div class="user-menu">
-                            <p>Hi ${x.user.first_name}</p>
+                            <p>Hi ${x.user.email}</p>
                             <div class="user-icon"> 
-                                ${x.user.first_name.charAt(0) + x.user.family_name.charAt(0)}
+                                ${x.user.email.charAt(0) + x.user.email.charAt(1)}
                                 </div>
                             </div>`,
                         class: "user-menu-dropdown", 

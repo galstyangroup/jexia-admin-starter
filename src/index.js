@@ -1,11 +1,16 @@
+import '@fortawesome/fontawesome-free/js/fontawesome'
+import '@fortawesome/fontawesome-free/js/solid'
+import '@fortawesome/fontawesome-free/js/regular'
+import '@fortawesome/fontawesome-free/js/brands'
 
-import axios from 'axios';
 import Router from './components/router';
-
 import docReady from './lib/docReady';
 import app from './components/app';
 import SignUp from './components/framework/signup';
 import Login from './components/framework/login';
+
+
+
 
 if (module.hot) {
     module.hot.accept();
