@@ -1,0 +1,16 @@
+version: 1.0
+publish: app
+services:
+  app:
+    command: npm run start
+    environment:
+      JEXIA_URL: https://c4563e93-80bf-4772-8b7c-57bf521f8897.app.jexia.com
+      JEXIA_PROJECT_ID: c4563e93-80bf-4772-8b7c-57bf521f8897
+      JEXIA_SECRET: JXtodeiM3UI+yRRORmlUINDLyoxZsGV+obzOHJnlNaDDc4HY1vZU8WGJMnGls5FZ+5m+mevY40qmMcD4wkDYjQ==
+      JEXIA_KEY: e1f23d06-c260-464d-9e3e-2cab53e38bb7
+    build:
+      type: dockerfile
+      config: ./.runme/Dockerfile
+    ports:
+      - container: 7050
+        public: 80
