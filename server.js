@@ -109,9 +109,10 @@ app.get('/api/logout', async (req, res ) => {
 //distribute files form frontend
 const DIST_DIR = __dirname + '/dist';
 const HTML_FILE = path.join(DIST_DIR, '/src/dist/index.html');
-app.use(express.static(DIST_DIR));
+const resolvedPath = path.resolve(HTML_FILE);
+app.use(express.static(resolvedPath));
 app.get('/', (req, res) => {
-    res.sendFile(HTML_FILE);
+    res.sendFile(resolvedPath);
 });
 
 // error handler middleware
