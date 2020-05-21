@@ -108,7 +108,7 @@ app.get('/api/logout', async (req, res ) => {
 
 //distribute files form frontend
 const DIST_DIR = __dirname + '/dist';
-const HTML_FILE = path.join(DIST_DIR, '/src/dist/index.html');
+const HTML_FILE = path.join(DIST_DIR, '/index.html');
 const resolvedPath = path.resolve(HTML_FILE);
 app.use(express.static(resolvedPath));
 app.get('/', (req, res) => {
