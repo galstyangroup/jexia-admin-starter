@@ -1,6 +1,6 @@
-@import './var.scss';
+@import 'var.scss';
 // basic reset
-@import './reset.scss';
+@import 'reset.scss';
 
 body {
     font-family: Verdana, Geneva, sans-serif;
@@ -28,14 +28,14 @@ p {
     text-align: center;
 }
 
-@import './header';
-@import './nav';
-@import './buttons';
-@import './tables';
-@import './tabulator';
-@import './forms';
-@import './dropdown';
-@import './stripe';
+@import 'header';
+@import 'nav';
+@import 'buttons';
+@import 'tables';
+@import 'tabulator';
+@import 'forms';
+@import 'dropdown';
+@import 'stripe';
 
 /* The container must be positioned relative: */
 
